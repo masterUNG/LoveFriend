@@ -62,6 +62,8 @@
 
         <!--New Register-->
         <TextView
+            android:id="@+id/txtRegister"
+            android:clickable="true"
             android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/colorAccent"

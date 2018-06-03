@@ -1,17 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#b4ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <!--Toolbar-->
     <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarRegister"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
 
     <!--Content-->
+    <LinearLayout
+        android:padding="16dp"
+        android:background="@drawable/red_button"
+        android:layout_margin="40dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Avata-->
+        <ImageView
+            android:id="@+id/imvAvata"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/avata"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <!--Name-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_action_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextFeild-->
+            <EditText
+                android:hint="Name :"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--User-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_action_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextFeild-->
+            <EditText
+                android:hint="User :"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Password-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_action_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextFeild-->
+            <EditText
+                android:hint="Password :"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
