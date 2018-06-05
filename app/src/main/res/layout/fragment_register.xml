@@ -45,6 +45,7 @@
 
             <!--TextFeild-->
             <EditText
+                android:id="@+id/edtName"
                 android:hint="Name :"
                 android:inputType="text"
                 android:layout_width="match_parent"
@@ -67,6 +68,7 @@
 
             <!--TextFeild-->
             <EditText
+                android:id="@+id/edtUser"
                 android:hint="User :"
                 android:inputType="text"
                 android:layout_width="match_parent"
@@ -89,6 +91,7 @@
 
             <!--TextFeild-->
             <EditText
+                android:id="@+id/edtPassword"
                 android:hint="Password :"
                 android:inputType="text"
                 android:layout_width="match_parent"
