@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,6 +21,7 @@ import masterung.androidthai.in.th.lovefriend.R;
 import masterung.androidthai.in.th.lovefriend.utility.GetAllData;
 import masterung.androidthai.in.th.lovefriend.utility.ListFriendAdapter;
 import masterung.androidthai.in.th.lovefriend.utility.MyConstant;
+import masterung.androidthai.in.th.lovefriend.utility.OnClickItem;
 
 public class ListFriendFragment extends Fragment {
 
@@ -64,7 +66,12 @@ public class ListFriendFragment extends Fragment {
             recyclerView.setLayoutManager(linearLayoutManager);
 
             ListFriendAdapter listFriendAdapter = new ListFriendAdapter(getActivity(),
-                    titleNameStringList, lastPostStringList, pathIconStringList);
+                    titleNameStringList, lastPostStringList, pathIconStringList, new OnClickItem() {
+                @Override
+                public void onClickItem(View view, int position) {
+                    Toast.makeText(getActivity(), "You Click " + position, Toast.LENGTH_SHORT).show();
+                }
+            });
             recyclerView.setAdapter(listFriendAdapter);
 
         } catch (Exception e) {

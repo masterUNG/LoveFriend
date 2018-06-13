@@ -21,17 +21,20 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.My
     private List<String> titleNameStringList,
             lastPostStringList,
             pathIconStringList;
+    private OnClickItem onClickItem;
 
     private LayoutInflater layoutInflater;
 
     public ListFriendAdapter(Context context,
                              List<String> titleNameStringList,
                              List<String> lastPostStringList,
-                             List<String> pathIconStringList) {
+                             List<String> pathIconStringList,
+                             OnClickItem onClickItem) {
         this.layoutInflater = LayoutInflater.from(context);
         this.titleNameStringList = titleNameStringList;
         this.lastPostStringList = lastPostStringList;
         this.pathIconStringList = pathIconStringList;
+        this.onClickItem = onClickItem;
     }
 
     @NonNull
@@ -46,7 +49,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.My
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
         String titleString = titleNameStringList.get(position);
         String lastPostString = lastPostStringList.get(position);
@@ -60,6 +63,13 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.My
                 .resize(100,100)
                 .into(holder.circleImageView);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickItem.onClickItem(v, holder.getAdapterPosition());
+            }
+        });
+
     }
 
     @Override
@@ -71,6 +81,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.My
 
         private TextView titleNameTextView, lastPostTextView;
         private CircleImageView circleImageView;
+
 
         public MyViewHolder(View itemView) {
             super(itemView);
